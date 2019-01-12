@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         buttonEnable.isEnabled = false
         let intraLogin = loginInput.text!
         if (intraLogin.isEmpty == true) {
+            self.alert(title: "Login Required", message: "Login cannot be empty")
             buttonEnable.isEnabled = true
         } else {
             if (NSDate().timeIntervalSince1970 > tokenExpire) {
@@ -60,10 +61,7 @@ class ViewController: UIViewController {
                     print ("Success")
                     self.json = JSON(response.value!)
                     if (self.json?.isEmpty)! {
-                        let alert = UIAlertController(title: "Invalid Login", message: "Please try different login", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in NSLog("The \"OK\" alert occured.")
-                        }))
-                        self.present(alert, animated: true, completion: nil)
+                        self.alert(title: "Invalid Login", message: "Please try different login")
                         self.buttonEnable.isEnabled = true
                     } else {
                         self.performSegue(withIdentifier: "InfoSegue", sender: self)
@@ -71,7 +69,7 @@ class ViewController: UIViewController {
                     }
                 case .failure(let error):
                     print(error)
-                    _ = UIAlertController(title: "Your Title", message: "Your Message", preferredStyle: UIAlertController.Style.alert)
+                    self.alert(title: "Invalid Login", message: "Please try different login")
                     self.buttonEnable.isEnabled = true
                 }
             }
@@ -90,6 +88,13 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    func alert(title: String?, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

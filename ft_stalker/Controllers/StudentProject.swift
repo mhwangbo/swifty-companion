@@ -76,32 +76,3 @@ class StudentProject: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-class projectVO {
-    init () {}
-    var name: String?
-    var slug: String?
-    var finalMark: Int?
-    var pass: Bool?
-}
-
-class Project {
-    
-    var project: [projectVO] = []
-    
-    init (for data: JSON) {
-        for each in data["projects_users"] {
-            if each.1["status"] == "finished" {
-                let tmp = projectVO()
-                tmp.name = each.1["project"]["name"].string
-                tmp.slug = each.1["project"]["slug"].string
-                tmp.finalMark = each.1["final_mark"].int
-                if each.1["validated?"] == true {
-                    tmp.pass = true
-                } else {
-                    tmp.pass = false
-                }
-                project.append(tmp)
-            }
-        }
-    }
-}

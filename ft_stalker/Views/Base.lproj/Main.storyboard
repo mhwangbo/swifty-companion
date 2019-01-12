@@ -335,8 +335,8 @@
                             <constraint firstItem="vxi-By-QUV" firstAttribute="leading" secondItem="elv-aO-SzA" secondAttribute="trailing" constant="-136" id="ejZ-2m-eRS"/>
                             <constraint firstItem="nvk-D9-8hi" firstAttribute="trailing" secondItem="vxi-By-QUV" secondAttribute="trailing" id="ejh-5O-NKf"/>
                             <constraint firstItem="Z2d-Ex-eCg" firstAttribute="bottom" secondItem="elv-aO-SzA" secondAttribute="bottom" id="gfF-6C-WdI"/>
+                            <constraint firstItem="6yM-hL-hVB" firstAttribute="top" secondItem="7du-Yi-pUz" secondAttribute="top" constant="193" id="jwT-f8-ygA"/>
                             <constraint firstItem="YFr-jD-Ilr" firstAttribute="trailing" secondItem="Z2d-Ex-eCg" secondAttribute="trailing" constant="34" id="oUI-hA-JFi"/>
-                            <constraint firstItem="6yM-hL-hVB" firstAttribute="top" secondItem="vxi-By-QUV" secondAttribute="bottom" id="tIe-eC-7lR"/>
                             <constraint firstItem="nvk-D9-8hi" firstAttribute="bottom" secondItem="vxi-By-QUV" secondAttribute="bottom" id="xFX-xO-JDj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YFr-jD-Ilr"/>
