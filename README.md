@@ -2,7 +2,7 @@
 This project aims to introduce iOS application development. This is an application that retrieves student information from 42, using the intranet API of 42.
 
 #
-![](ft_stalker.gif)
+ ![](ft_stalker.gif)
 #
 
 # Goals
